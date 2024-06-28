@@ -68,17 +68,17 @@ Description = 'Manage wezterm sessions and other wezterm commands easily with po
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
 
-# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+# # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+FunctionsToExport = 'Use-Wezterm'
 
-# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+# # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+# CmdletsToExport = '*'
 
-# Variables to export from this module
-VariablesToExport = '*'
+# # Variables to export from this module
+# VariablesToExport = '*'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = 'wezterm'
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -98,16 +98,16 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/derekthecool/WeztermPowershell/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/derekthecool/WeztermPowershell'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/derekthecool/WeztermPowershell/blob/master/docs/CHANGELOG.md'
 
         # Prerelease string of this module
         # Prerelease = ''
@@ -129,5 +129,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
-
