@@ -1,5 +1,9 @@
 # WeztermPowershell
 
+![Windows pwsh](https://github.com/github/derekthecool/WeztermPowershell/workflows/wf_Windows_Core.yml/badge.svg)
+![Linux pwsh](https://github.com/github/derekthecool/WeztermPowershell/workflows/wf_Linux.yml/badge.svg)
+![Mac pwsh](https://github.com/github/derekthecool/WeztermPowershell/workflows/wf_MacOS.yml/badge.svg)
+
 ## Synopsis
 
 <!-- Enter a synopsis -->
@@ -37,4 +41,3 @@
 ## Author
 
 Derek Lomax
-
