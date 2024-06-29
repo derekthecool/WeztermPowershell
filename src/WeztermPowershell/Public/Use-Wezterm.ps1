@@ -1,3 +1,5 @@
+$wezterm_binary = Get-Command wezterm -ErrorAction SilentlyContinue
+
 <#
     .SYNOPSIS
     Powershell wrapper around the wezterm cli interface
@@ -10,7 +12,13 @@
 #>
 function Use-Wezterm
 {
-    Write-Output "Yay!"
+    if($null -eq $wezterm_binary)
+    {
+        Write-Error "wezterm not found in path!"
+        return 1
+    }
+
+    & "$wezterm_binary" $args
 }
 
 New-Alias -Name wezterm -Value Use-Wezterm
