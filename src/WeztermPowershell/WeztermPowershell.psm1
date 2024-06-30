@@ -26,6 +26,7 @@ foreach ($file in @($public + $private))
     try
     {
         . $file.FullName
+        Write-Verbose "Dot sourcing: $file"
     } catch
     {
         throw "Unable to dot source [$($file.FullName)]"
