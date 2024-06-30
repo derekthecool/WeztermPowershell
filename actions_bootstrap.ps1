@@ -29,8 +29,11 @@ $modulesToInstall = New-Object System.Collections.Generic.List[object]
             ModuleName    = 'platyPS'
             ModuleVersion = '0.12.0'
         }))
-
-
+# https://github.com/jdhitsolutions/PSScriptTools
+[void]$modulesToInstall.Add(([PSCustomObject]@{
+            ModuleName    = 'PSScriptTools'
+            ModuleVersion = '2.48.0'
+        }))
 
 'Installing PowerShell Modules'
 foreach ($module in $modulesToInstall) {
