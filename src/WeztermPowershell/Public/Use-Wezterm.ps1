@@ -1,4 +1,4 @@
-$wezterm_binary = Get-Command wezterm -ErrorAction SilentlyContinue
+$Global:wezterm_binary = Get-Command wezterm -ErrorAction SilentlyContinue
 
 <#
     .SYNOPSIS
