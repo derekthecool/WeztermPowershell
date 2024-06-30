@@ -27,28 +27,52 @@ InModuleScope 'WeztermPowershell' {
         } #beforeAll
         Context 'Error' {
 
-            It 'should return unknown if an error is encountered getting the date' {
-                Mock -CommandName Get-Date -MockWith {
-                    throw 'Fake Error'
-                } #endMock
-                Get-Day | Should -BeExactly 'Unknown'
-            } #it
+        }
 
-        } #context_Error
         Context 'Success' {
 
             BeforeEach {
 
-            } #beforeEach
+            }
 
-            It '1 is 1' {
-                1 | Should -BeExactly 1
-            } #it
+            It 'Get-WeztermCompletion wezterm only should return at least 19 items' {
+                Get-WeztermCompletion -Command 'wezterm' | Should -HaveCount 19
+            }
 
-            It 'Get-WeztermCompletion wezterm only should return at least 5' {
-                Get-WeztermCompletion -Command 'wezterm' | Should -HaveCount 5
-            } #it
+            It 'Get-WeztermCompletion wezterm only should include these items' {
+                $ExpectedItems = @(
+                    'start'
+                    'ssh'
+                    'serial'
+                    'connect'
+                    'ls-fonts'
+                    'show-keys'
+                    'cli'
+                    'imgcat'
+                    'set-working-directory'
+                    'record'
+                    'replay'
+                    'shell-completion'
+                    'help'
+                    '-n'
+                    '--config-file'
+                    '--config'
+                    '-h'
+                    '-V'
+                )
 
-        } #context_Success
-    } #describe_Get-HellowWorld
-} #inModule
+                $ActualItems = Get-WeztermCompletion -Command 'wezterm'
+
+                $ActualItems | ForEach-Object { Write-Debug "Actual item found: $_" }
+
+                $ExpectedItems | ForEach-Object {
+                    $ActualItems | Should -Contain $_
+                }
+            }
+
+            It 'Get-WeztermCompletion should be of type string' {
+                Get-WeztermCompletion -Command 'wezterm' | Should -BeOfType 'string'
+            }
+        }
+    }
+}

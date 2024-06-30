@@ -13,8 +13,9 @@ function Get-WeztermCompletion
         Write-Verbose "helpOutput:`n$helpOutput"
         $helpOutput
         | Where-Object { -not ([string]::IsNullOrEmpty($_)) }
-        | ConvertFrom-Text -NoProgress '^\s{2,}(?<CommandOrHelp>(-[A-Za-z0-9]|-{2}[a-z][a-z0-9-]+))'
+        | ConvertFrom-Text -NoProgress '^\s{2,}(?<CommandOrHelp>[a-z-]{1,2}[a-zA-Z0-9-]+)\b'
         | Sort-Object -Property CommandOrHelp -Unique -CaseSensitive
+        | Select-Object -ExpandProperty CommandOrHelp
     }
 }
 
@@ -22,7 +23,7 @@ $scriptblock = {
     param($wordToComplete, $commandAst, $cursorPosition)
     Get-WeztermCompletion -Command $commandAst
     | ForEach-Object {
-        $item = $_.CommandOrHelp
+        $item = $_
 
         $CompletionResultValues = @{
             CompletionText      = $item
