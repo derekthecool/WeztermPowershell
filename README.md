@@ -41,3 +41,10 @@
 ## Author
 
 Derek Lomax
+
+## Commands To Implement
+
+```powershell
+# Create a new workspace with a name
+wezterm cli spawn --workspace 'test' --new-window
+```
