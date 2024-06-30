@@ -21,6 +21,10 @@
     ExcludeRules = @(
         'PSAvoidUsingInvokeExpression'
         'PSReviewUnusedParameter'
+
+        # This module uses a single global variable for the original path to the wezterm binary for now
+        # $Global:wezterm_binary
+        'PSAvoidGlobalVars'
     )
     #________________________________________
     #Rules
