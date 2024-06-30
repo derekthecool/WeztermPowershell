@@ -20,5 +20,3 @@ function Use-Wezterm
 
     & "$wezterm_binary" $args
 }
-
-New-Alias -Name wezterm -Value Use-Wezterm

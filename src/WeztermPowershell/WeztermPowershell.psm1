@@ -34,6 +34,8 @@ foreach ($file in @($public + $private))
     }
 }
 
+New-Alias -Name wezterm -Value Use-Wezterm
+
 # export all public functions
 Export-ModuleMember -Function $public.Basename
 Export-ModuleMember -Alias wezterm
